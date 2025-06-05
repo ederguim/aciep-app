@@ -1,0 +1,84 @@
+{
+  "empresas": [
+    {
+      "razaoSocial": "Empresa Alfa Ltda",
+      "nomeFantasia": "Alfa Soluções",
+      "email": "contato@alfasolucoes.com.br",
+      "telefone": "(11) 4002-8922",
+      "cnpj": "12.345.678/0001-90",
+      "endereco": "Rua das Acácias, 123 - São Paulo, SP",
+      "modalidade": "Tecnologia",
+      "quantidadeFuncionarios": 150,
+      "id": "39e1"
+    },
+    {
+      "razaoSocial": "Comercial Beta S.A.",
+      "nomeFantasia": "Beta Varejo",
+      "email": "vendas@betavarejo.com.br",
+      "telefone": "(21) 99876-5432",
+      "cnpj": "98.765.432/0001-10",
+      "endereco": "Av. Central, 456 - Rio de Janeiro, RJ",
+      "modalidade": "Comércio",
+      "quantidadeFuncionarios": 75,
+      "id": "9b3f"
+    },
+    {
+      "razaoSocial": "Gama Indústria e Comércio Ltda",
+      "nomeFantasia": "GamaTech",
+      "email": "suporte@gamatech.com.br",
+      "telefone": "(31) 3333-2222",
+      "cnpj": "11.222.333/0001-44",
+      "endereco": "Rod. BR-040, Km 123 - Belo Horizonte, MG",
+      "modalidade": "Indústria",
+      "quantidadeFuncionarios": 300,
+      "id": "b928"
+    },
+    {
+      "id": "5f43",
+      "razaoSocial": "Teset",
+      "nomeFantasia": "Eder Guimaraes de Morais",
+      "email": "eder88guimaraes@gmail.com",
+      "telefone": "62993320836",
+      "cnpj": "13131321123",
+      "endereco": "32123121",
+      "modalidade": "32132132",
+      "quantidadeFuncionarios": 0
+    },
+    {
+      "id": "4798",
+      "razaoSocial": "Teset",
+      "nomeFantasia": "Eder Guimaraes de Morais",
+      "email": "eder88guimaraes@gmail.com",
+      "telefone": "62993320836",
+      "cnpj": "13131321123",
+      "endereco": "32123121",
+      "modalidade": "32132132",
+      "quantidadeFuncionarios": 0
+    },
+    {
+      "id": "4769",
+      "razaoSocial": "Teset",
+      "nomeFantasia": "Empresa",
+      "email": "eder88guimaraes@gmail.com",
+      "telefone": "62993320836",
+      "cnpj": "13131321123",
+      "endereco": "32123121",
+      "modalidade": "32132132",
+      "quantidadeFuncionarios": 0,
+      "associacaoId": "793d"
+    }
+  ],
+  "associacoes": [
+    {
+      "id": "793d",
+      "razaoSocial": "Teset",
+      "nomeFantasia": "Eder Guimaraes de Morais",
+      "email": "eder88guimaraes@gmail.com",
+      "telefone": "62993320836",
+      "cnpj": "13131321123",
+      "endereco": "32123121",
+      "modalidade": "32132132",
+      "quantidadeFuncionarios": 0
+    }
+  ]
+}
