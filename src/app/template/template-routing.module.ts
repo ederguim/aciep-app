@@ -10,12 +10,18 @@ const routes: Routes = [
       {
         path: 'empresas',
         loadChildren: () => import('../empresas/empresas.module').then(m => m.EmpresasModule),
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: {
+          titulo: 'Empresas', subTitulo: 'Gerenciar Empresas'
+        }
       },
       {
         path: 'associacoes',
         loadChildren: () => import('../associacoes/associacoes.module').then(m => m.AssociacoesModule),
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: {
+          titulo: 'Associações', subTitulo: 'Gerenciar Associações'
+        }
       }
     ] 
 }

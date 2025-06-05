@@ -112,7 +112,7 @@
                 <option *ngFor="let item of associacoes" [value]="item.id">
                     {{ item.nomeFantasia }}
                 </select>
-            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('modalidade')">
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('associacaoId')">
                 Campo Obrigatório
             </span>
         </div>
