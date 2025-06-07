@@ -10,17 +10,15 @@ const routes: Routes = [
       {
         path: 'empresas',
         loadChildren: () => import('../empresas/empresas.module').then(m => m.EmpresasModule),
-        pathMatch: 'full',
         data: {
-          titulo: 'Empresas', subTitulo: 'Gerenciar Empresas'
+          titulo: 'ACIEP', subTitulo: 'Gerenciar Empresas'
         }
       },
       {
         path: 'associacoes',
         loadChildren: () => import('../associacoes/associacoes.module').then(m => m.AssociacoesModule),
-        pathMatch: 'full',
         data: {
-          titulo: 'Associações', subTitulo: 'Gerenciar Associações'
+          titulo: 'ACIEP', subTitulo: 'Gerenciar Associações'
         }
       }
     ] 

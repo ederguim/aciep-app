@@ -1,0 +1,112 @@
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+    <h2 class="text-2xl font-semibold text-gray-500 mg-4">Nova Empresa</h2>
+    <hr class="border-t border-gray-300 my-4" />
+    <form id="empresaForm" [formGroup]="camposForm" (ngSubmit)="salvar()">
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Nome</label>
+            <input type="text" id="nomeFantasia" name="nomeFantasia" formControlName="nomeFantasia"
+                placeholder="Ex: Restaurantes, Praias, Shopping"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('nomeFantasia')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Razão Social</label>
+            <input type="text" id="razaoSocial" name="razaoSocial" formControlName="razaoSocial"
+                placeholder="Ex: Restaurantes, Praias, Shopping"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('razaoSocial')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">E-mail</label>
+            <input type="text" id="email" name="email" formControlName="email" placeholder="Ex: empresa@email.com"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('email')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Telefone</label>
+            <input type="text" id="telefone" name="telefone" formControlName="telefone"
+                placeholder="Ex: (99) 99999-9999"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('telefone')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">CNPJ</label>
+            <input type="text" id="cnpj" name="cnpj" formControlName="cnpj" placeholder="Ex: 99.999.999/0001-99"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('cnpj')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Endereço</label>
+            <input type="text" id="endereco" name="endereco" formControlName="endereco"
+                placeholder="Ex: Rua 123, Bairro, Cidade, Estado"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('endereco')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Modalidade</label>
+            <input type="text" id="modalidade" name="modalidade" formControlName="modalidade"
+                placeholder="Ex: Industria, Comércio, Serviços"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('modalidade')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Associação</label>
+            <select type="text" id="associacaoId" name="associacaoId" formControlName="associacaoId"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required>
+                <option [value]="" disabled selected>Selecione uma Associação</option>
+                <option *ngFor="let item of associacoes" [value]="item.id">
+                    {{ item.nomeFantasia }}
+            </select>
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('associacaoId')">
+                Campo Obrigatório
+            </span>
+        </div>
+        <div class="mb-4">
+            <label class="block  font-medium mb-2 text-gray-500">Quantidade de Funcionários</label>
+            <input type="number" id="quantidadeFuncionarios" name="quantidadeFuncionarios"
+                formControlName="quantidadeFuncionarios" placeholder="Ex: 50, 100, 200"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span class="text-red-500 text-sm" *ngIf="isValidacaoCampo('quantidadeFuncionarios')">
+                Campo Obrigatório
+            </span>
+        </div>
+        @if (!camposForm.disabled) {
+        <div class="mb-4">
+            @if (!editar){
+            <button type="submit"
+                class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">
+                Cadastrar Empresa
+            </button>
+            } @else {
+            <button type="submit"
+                class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">
+                Atualizar Empresa
+            </button>
+            }
+        </div>
+        <div class="mb-4">
+            <button (click)="limpar()" type="button"
+                class="w-full bg-yellow-400 text-white font-semibold p-3 rounded shadow hover:bg-yellow-500">Limpar</button>
+        </div>
+        } @else {
+        <div class="mb-4">
+            <button routerLink="/paginas/empresas/list" type="button"
+                class="w-full bg-yellow-400 text-white font-semibold p-3 rounded shadow hover:bg-yellow-500">Voltar</button>
+        </div>
+        }
+    </form>
+</div>

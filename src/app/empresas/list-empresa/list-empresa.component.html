@@ -1,0 +1,41 @@
+<div class="p-8 max-w-4xl mx-auto bg-white shadow-lg rounded-lg mt-8">
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-2xl font-semibold text-gray-500">Listar Empresa</h2>
+    <button routerLink="/paginas/empresas/create" type="button" class="text-white bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      Nova Empresa
+    </button>
+  </div>
+  <hr class="border-t border-gray-300 my-4" />
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border border-gray-300 min-w-[700px]">
+      <thead>
+        <tr>
+          <th class="border border-gray-300 px-6 py-3 text-gray-500">Nome</th>
+          <th class="border border-gray-300 px-6 py-3 text-gray-500">E-mail</th>
+          <th class="border border-gray-300 px-6 py-3 text-gray-500">Telefone</th>
+          <th class="border border-gray-300 px-6 py-3 text-gray-500">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas">
+          <td class="border border-gray-300 px-6 py-3 text-gray-500">{{ empresa.nomeFantasia }}</td>
+          <td class="border border-gray-300 px-6 py-3 text-gray-500">{{ empresa.email }}</td>
+          <td class="border border-gray-300 px-6 py-3 text-gray-500">{{ empresa.telefone }}</td>
+          <td class="border border-gray-300 px-6 py-3 text-gray-500">
+            <div class="flex gap-4">
+              <button type="button" title="Visualizar" class="hover:text-yellow-300 text-blue-700 font-medium rounded py-1 transition-colors" (click)="editar(empresa.id, false)">
+                <mat-icon fontIcon="zoom_in"/>
+              </button>
+              <a title="Editar" class="hover:text-yellow-300 text-blue-700 font-medium rounded py-1 transition-colors" (click)="editar(empresa.id, true)">
+                <mat-icon fontIcon="edit"/>
+              </a>
+              <a title="Deletar" class="hover:text-yellow-300 text-blue-700 font-medium rounded py-1 transition-colors" (click)="preparaExcluir(empresa)">
+                <mat-icon fontIcon="delete"/>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

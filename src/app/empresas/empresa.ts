@@ -8,5 +8,6 @@ export class Empresa {
     endereco?: string;
     modalidade?: string;
     quantidadeFuncionarios?: number;
-    associacaoId?: number; // Adicionando o campo associacaoId para vincular a uma associação
+    associacaoId?: number;
+    deletar: boolean = false;
 }
